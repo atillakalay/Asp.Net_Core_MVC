@@ -6,11 +6,16 @@ namespace MyAspCoreApp.Web.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.name = "Asp.Net Core";
-            ViewBag.person = new { id = 1, name = "Atilla", age = 23 };
 
-            ViewData["age"] = 23;
-            ViewData["names"] = new List<string> { "Atilla", "Yasin", "Veysel", "Salih", "İbrahim" };
+            //***Viewbag ve ViewData ile action methodun cshtml sayfasına veri taşırken, tempdata ile sayfalar arası veri taşırız.
+
+            //ViewBag.name = "Asp.Net Core";
+            //ViewBag.person = new { id = 1, name = "Atilla", age = 23 };
+
+            //ViewData["age"] = 23;
+            //ViewData["names"] = new List<string> { "Atilla", "Yasin", "Veysel", "Salih", "İbrahim" };
+
+            TempData["surname"] = "Kalay";
 
             return View();
         }
@@ -18,7 +23,8 @@ namespace MyAspCoreApp.Web.Controllers
         public IActionResult Index2()
         {
 
-            return RedirectToAction("Index", "Example");
+            //return RedirectToAction("Index", "Example");
+            return View();
         }
 
         public IActionResult ParametreView(int id)
