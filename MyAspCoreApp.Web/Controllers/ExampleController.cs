@@ -15,6 +15,16 @@ namespace MyAspCoreApp.Web.Controllers
             return RedirectToAction("Index", "Example");
         }
 
+        public IActionResult ParametreView(int id)
+        {
+            return RedirectToAction("JsonResultParametre", "Example", new { id = id });
+        }
+
+        public IActionResult JsonResultParametre(int id)
+        {
+            return Json(new { Id = id });
+        }
+
         public IActionResult ContentResult()
         {
             return Content("ContentResult");
