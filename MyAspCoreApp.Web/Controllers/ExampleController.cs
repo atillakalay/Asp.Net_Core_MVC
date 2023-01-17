@@ -1,12 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 namespace MyAspCoreApp.Web.Controllers
+
 {
+
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
     public class ExampleController : Controller
     {
         public IActionResult Index()
         {
-
             //***Viewbag ve ViewData ile action methodun cshtml sayfasına veri taşırken, tempdata ile sayfalar arası veri taşırız.
 
             //ViewBag.name = "Asp.Net Core";
@@ -15,9 +21,15 @@ namespace MyAspCoreApp.Web.Controllers
             //ViewData["age"] = 23;
             //ViewData["names"] = new List<string> { "Atilla", "Yasin", "Veysel", "Salih", "İbrahim" };
 
-            TempData["surname"] = "Kalay";
+            //TempData["surname"] = "Kalay";
 
-            return View();
+            var productList = new List<Product>
+            {
+                new Product{Id = 1,Name = "Kalem"},
+                new Product{Id = 2,Name = "Defter"},
+                new Product{Id = 3,Name = "Silgi"}
+            };
+            return View(productList);
         }
 
         public IActionResult Index2()

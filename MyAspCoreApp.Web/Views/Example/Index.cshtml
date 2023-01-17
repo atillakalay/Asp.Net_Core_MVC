@@ -4,7 +4,7 @@
 }
 
 <h1>Example Controller, Index sayfası</h1>
-
+@model List<MyAspCoreApp.Web.Controllers.Product>
 @*@{
     var name = ViewBag.name;
     <p>@name</p>
@@ -27,5 +27,11 @@
     <p>@item</p>
 }
 <p>@person.id- @person.name- @person.age</p>*@
+
+@foreach (var item in Model)
+{
+    <p>@item.Id</p>
+    <p>@item.Name</p>
+}
 
 
