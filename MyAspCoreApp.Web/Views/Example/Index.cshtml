@@ -9,9 +9,21 @@
     var name = ViewBag.name;
     <p>@name</p>
 
+    var person = ViewBag.person;
+
 }
 
 <p>@name</p>
 
 <h2>@ViewBag.name</h2>
 
+<hr/>
+
+<p>Yaş: @ViewData["age"]</p>
+
+<h1>İsimler</h1>
+@foreach (var item in (ViewData["names"] as List<string>)!)
+{
+    <p>@item</p>
+}
+<p>@person.id- @person.name- @person.age</p>
