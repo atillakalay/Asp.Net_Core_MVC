@@ -3,7 +3,7 @@
     var alert = "Bu bir uyarı mesajıdır";
 }
 
-@section Scripts
+@*@section Scripts
 {
     <script type="text/javascript">
     //alert("Sayfamıza Hoşgeldiniz.")
@@ -11,12 +11,21 @@
             console.log("Sayfamıza hoşgeldin.");
         })
     </script>
+}*@
+
+@section Css
+{
+    <style>
+        h1 {
+            color: red;
+            background-color: aqua;
+
+        }
+    </style>
 }
 
-<div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
 @*<partial name="_MenuPartialView"/>
 @await Html.PartialAsync("_MenuPartialView")
 @Html.Partial("_MenuPartialView")*@
