@@ -7,9 +7,9 @@ namespace MyAspCoreApp.Web.Controllers
     {
         private readonly ProductRepository _productRepository;
 
-        public ProductsController(ProductRepository productRepository)
+        public ProductsController()
         {
-            _productRepository = productRepository;
+            _productRepository = new ProductRepository();
 
             if (!_productRepository.GetAll().Any())
             {
