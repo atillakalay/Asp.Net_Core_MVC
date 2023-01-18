@@ -1,8 +1,38 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var alert = "Bu bir uyarı mesajıdır";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<div>@DateTime.Now.ToShortDateString()</div>
+@{
+    var dateTime = DateTime.Now.ToShortDateString();
+    var message = "Merhaba";
+
+    @: Bugünün Tarihi: @dateTime
+    <text>Bugünün Tarihi: @dateTime</text>
+
+    <div>@message</div>
+}
+
+@if (1==1)
+{
+    <p>Doğru</p>
+}
+else if (DateTime.IsLeapYear(DateTime.Now.Year))
+{
+    <p>Artık yıl</p>
+}
+else
+{
+    <p>@alert</p>
+    <p>Yanlış</p>
+}
+
+@for (int i = 0; i < 11; i++)
+{
+    <p>i</p>
+}
