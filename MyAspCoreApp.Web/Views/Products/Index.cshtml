@@ -23,6 +23,7 @@
                 <td>@item.Name</td>
                 <td>@item.Price</td>
                 <td>@item.Stock</td>
+                <td><a asp-action="Remove" asp-controller="Products" asp-route-id="@item.Id">Sil</a></td>
             </tr>
         }
 

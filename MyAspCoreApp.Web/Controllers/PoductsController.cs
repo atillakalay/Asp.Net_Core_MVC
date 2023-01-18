@@ -10,19 +10,18 @@ namespace MyAspCoreApp.Web.Controllers
         public ProductsController()
         {
             _productRepository = new ProductRepository();
-
-            if (!_productRepository.GetAll().Any())
-            {
-                _productRepository.Add(new Product() { Id = 1, Name = "Kalem", Price = 15, Stock = 750 });
-                _productRepository.Add(new Product() { Id = 2, Name = "Silgi", Price = 25, Stock = 500 });
-                _productRepository.Add(new Product() { Id = 3, Name = "Kalem Kutusu", Price = 35, Stock = 250 });
-            }
         }
 
         public IActionResult Index()
         {
             var products = _productRepository.GetAll();
             return View(products);
+        }
+
+        public IActionResult Remove(int id)
+        {
+            _productRepository.Remove(id);
+            return RedirectToAction("Index");
         }
     }
 }
