@@ -7,7 +7,12 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<div>@DateTime.Now.ToShortDateString()</div>
+<partial name="_MenuPartialView"/>
+@await Html.PartialAsync("_MenuPartialView")
+@Html.Partial("_MenuPartialView")
+
+
+@*<div>@DateTime.Now.ToShortDateString()</div>
 @{
     var dateTime = DateTime.Now.ToShortDateString();
     var message = "Merhaba";
@@ -35,4 +40,4 @@ else
 @for (int i = 0; i < 11; i++)
 {
     <p>i</p>
-}
+}*@
