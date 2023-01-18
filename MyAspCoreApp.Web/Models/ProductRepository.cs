@@ -4,7 +4,7 @@
     {
         private static List<Product> _products;
 
-        public List<Product> Products => _products;
+        public List<Product> GetAll() => _products;
         public void Add(Product newProduct) => _products.Add(newProduct);
 
         public void Remove(int id)

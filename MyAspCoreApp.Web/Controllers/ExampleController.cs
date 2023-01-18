@@ -4,11 +4,11 @@ namespace MyAspCoreApp.Web.Controllers
 
 {
 
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+    //public class Product
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+    //}
     public class ExampleController : Controller
     {
         public IActionResult Index()
@@ -23,13 +23,13 @@ namespace MyAspCoreApp.Web.Controllers
 
             //TempData["surname"] = "Kalay";
 
-            var productList = new List<Product>
-            {
-                new Product{Id = 1,Name = "Kalem"},
-                new Product{Id = 2,Name = "Defter"},
-                new Product{Id = 3,Name = "Silgi"}
-            };
-            return View(productList);
+            //var productList = new List<Product>
+            //{
+            //    new Product{Id = 1,Name = "Kalem"},
+            //    new Product{Id = 2,Name = "Defter"},
+            //    new Product{Id = 3,Name = "Silgi"}
+            //};
+            return View();
         }
 
         public IActionResult Index2()
