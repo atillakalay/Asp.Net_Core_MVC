@@ -63,5 +63,15 @@ namespace MyAspCoreApp.Web.Controllers
         {
             return new EmptyResult();
         }
+
+        public IActionResult LayoutExample()
+        {
+            return View();
+        }
+
+        public IActionResult NoLayout()
+        {
+            return View();
+        }
     }
 }
