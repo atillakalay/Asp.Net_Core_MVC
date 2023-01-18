@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/GMKjGgiMK1/FxtbVOE5b6m/SOdSzivYJu9E+NiTcfU=",
+  "Hash": "t3SJ+QioOCu0uFLJxHIyX1hCTpTvi8oKS0E64Arxl6k=",
   "Source": "MyAspCoreApp.Web",
   "BasePath": "_content/MyAspCoreApp.Web",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyAspCoreApp.Web.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\css\\example.css",
+      "SourceId": "MyAspCoreApp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\",
+      "BasePath": "_content/MyAspCoreApp.Web",
+      "RelativePath": "css/example.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\example.css"
     },
     {
       "Identity": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\css\\site.css",

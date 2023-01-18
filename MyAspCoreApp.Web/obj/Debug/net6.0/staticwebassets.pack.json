@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MyAspCoreApp.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\css\\example.css",
+      "PackagePath": "staticwebassets\\css\\example.css"
+    },
+    {
       "Id": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
