@@ -8,6 +8,7 @@
 <body>
 <header>
     <div>Header</div>
+    @await RenderSectionAsync("header", required: false)
 </header>
 <div class="container">
     <main role="main" class="pb-3">
@@ -19,6 +20,7 @@
     <div class="container">
         Footer @DateTime.Now.ToShortDateString()
     </div>
+    @await RenderSectionAsync("footer", required: false)
 </footer>
 
 @await RenderSectionAsync("Scripts", required: false)
