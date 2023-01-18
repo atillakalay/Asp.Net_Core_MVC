@@ -3,13 +3,23 @@
     var alert = "Bu bir uyarı mesajıdır";
 }
 
+@section Scripts
+{
+    <script type="text/javascript">
+    //alert("Sayfamıza Hoşgeldiniz.")
+        $(document).ready(function(){
+            console.log("Sayfamıza hoşgeldin.");
+        })
+    </script>
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<partial name="_MenuPartialView"/>
+@*<partial name="_MenuPartialView"/>
 @await Html.PartialAsync("_MenuPartialView")
-@Html.Partial("_MenuPartialView")
+@Html.Partial("_MenuPartialView")*@
 
 
 @*<div>@DateTime.Now.ToShortDateString()</div>
