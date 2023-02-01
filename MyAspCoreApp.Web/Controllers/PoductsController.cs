@@ -53,6 +53,9 @@ namespace MyAspCoreApp.Web.Controllers
             //Product product = new Product() { Color = Color, Name = Name, Price = Price, Stock = Stock };
             _dbContext.Products.Add(product);
             _dbContext.SaveChanges();
+
+            TempData["status"] = "Ürün başarıyla eklendi";
+
             return RedirectToAction("Add");
         }
         [HttpGet]
@@ -66,6 +69,9 @@ namespace MyAspCoreApp.Web.Controllers
         {
             _dbContext.Products.Update(product);
             _dbContext.SaveChanges();
+
+            TempData["status"] = "Ürün başarıyla güncellendi";
+
             return RedirectToAction("Index");
         }
     }
