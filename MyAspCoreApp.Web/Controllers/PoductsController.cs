@@ -65,8 +65,9 @@ namespace MyAspCoreApp.Web.Controllers
             return View(product);
         }
         [HttpPost]
-        public IActionResult Update(Product product)
+        public IActionResult Update(Product product, int productId)
         {
+            product.Id = productId;
             _dbContext.Products.Update(product);
             _dbContext.SaveChanges();
 
