@@ -9,6 +9,6 @@ namespace MyAspCoreApp.Web.Models
 
         }
 
-        public DbSet<Product> Products;
+        public DbSet<Product> Products { get; set; }
     }
 }
