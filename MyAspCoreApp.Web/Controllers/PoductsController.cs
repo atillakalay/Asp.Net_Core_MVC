@@ -13,14 +13,14 @@ namespace MyAspCoreApp.Web.Controllers
             _dbContext = dbContext;
             _productRepository = new ProductRepository();
 
-            if (!_dbContext.Products.Any())
-            {
-                _dbContext.Add(new Product() { Name = "Kalem 1", Price = 12, Stock = 85 });
-                _dbContext.Add(new Product() { Name = "Kalem 2", Price = 12, Stock = 85 });
-                _dbContext.Add(new Product() { Name = "Kalem 3", Price = 12, Stock = 85 });
-                _dbContext.Add(new Product() { Name = "Kalem 4", Price = 12, Stock = 85 });
-                _dbContext.SaveChanges();
-            }
+            //if (!_dbContext.Products.Any())
+            //{
+            //    _dbContext.Add(new Product() { Name = "Kalem 1", Price = 12, Stock = 85 });
+            //    _dbContext.Add(new Product() { Name = "Kalem 2", Price = 12, Stock = 85 });
+            //    _dbContext.Add(new Product() { Name = "Kalem 3", Price = 12, Stock = 85 });
+            //    _dbContext.Add(new Product() { Name = "Kalem 4", Price = 12, Stock = 85 });
+            //    _dbContext.SaveChanges();
+            //}
         }
 
         public IActionResult Index()
@@ -43,9 +43,19 @@ namespace MyAspCoreApp.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(Product product)
+        public IActionResult AddProduct()
         {
-            return View();
+            //1. Yöntem
+            var name = HttpContext.Request.Form["name"].ToString();
+            var price = decimal.Parse(HttpContext.Request.Form["Price"]);
+            var stock = int.Parse(HttpContext.Request.Form["Stock"]);
+            var color = HttpContext.Request.Form["Color"];
+
+            Product product = new Product() { Color = color, Name = name, Price = price, Stock = stock };
+            _dbContext.Products.Add(product);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Add");
         }
         public IActionResult Update(int id)
         {
