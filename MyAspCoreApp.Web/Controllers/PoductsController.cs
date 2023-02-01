@@ -37,7 +37,13 @@ namespace MyAspCoreApp.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(Product product)
         {
             return View();
         }
