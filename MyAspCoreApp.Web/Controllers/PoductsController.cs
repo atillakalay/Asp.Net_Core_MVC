@@ -15,10 +15,10 @@ namespace MyAspCoreApp.Web.Controllers
 
             if (!_dbContext.Products.Any())
             {
-                _dbContext.Add(new Product() { Name = "Kalem 1", Price = 12, Stock = 85 });
-                _dbContext.Add(new Product() { Name = "Kalem 2", Price = 13, Stock = 86 });
-                _dbContext.Add(new Product() { Name = "Kalem 3", Price = 14, Stock = 87 });
-                _dbContext.Add(new Product() { Name = "Kalem 4", Price = 15, Stock = 88 });
+                _dbContext.Add(new Product() { Name = "Kalem 1", Price = 12, Stock = 85, Color = "Red", Height = 20, Width = 18 });
+                _dbContext.Add(new Product() { Name = "Kalem 2", Price = 13, Stock = 86, Color = "Red", Height = 20, Width = 18 });
+                _dbContext.Add(new Product() { Name = "Kalem 3", Price = 14, Stock = 87, Color = "Red", Height = 20, Width = 18 });
+                _dbContext.Add(new Product() { Name = "Kalem 4", Price = 15, Stock = 88, Color = "Red", Height = 20, Width = 18 });
                 _dbContext.SaveChanges();
             }
         }
