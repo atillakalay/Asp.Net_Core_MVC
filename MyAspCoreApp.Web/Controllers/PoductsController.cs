@@ -43,18 +43,17 @@ namespace MyAspCoreApp.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddProduct()
+        public IActionResult Add(string Name, decimal Price, int Stock, string Color
+        )
         {
             //1. Yöntem
-            var name = HttpContext.Request.Form["name"].ToString();
-            var price = decimal.Parse(HttpContext.Request.Form["Price"]);
-            var stock = int.Parse(HttpContext.Request.Form["Stock"]);
-            var color = HttpContext.Request.Form["Color"];
-
-            Product product = new Product() { Color = color, Name = name, Price = price, Stock = stock };
+            //var name = HttpContext.Request.Form["name"].ToString();
+            //var price = decimal.Parse(HttpContext.Request.Form["Price"]);
+            //var stock = int.Parse(HttpContext.Request.Form["Stock"]);
+            //var color = HttpContext.Request.Form["Color"];
+            Product product = new Product() { Color = Color, Name = Name, Price = Price, Stock = Stock };
             _dbContext.Products.Add(product);
             _dbContext.SaveChanges();
-
             return RedirectToAction("Add");
         }
         public IActionResult Update(int id)
