@@ -12,6 +12,7 @@
             <th>Id</th>
             <th>İsim</th>
             <th>Fiyat</th>
+            <th>Renk</th>
             <th>Stok</th>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Price</td>
+                <td>@item.Color</td>
                 <td>@item.Stock</td>
                 <td><a asp-action="Remove" asp-controller="Products" asp-route-id="@item.Id">Sil</a></td>
                 <td><a asp-action="Update" asp-controller="Products" asp-route-id="@item.Id">Güncelle</a></td>
