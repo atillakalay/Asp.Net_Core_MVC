@@ -55,9 +55,18 @@ namespace MyAspCoreApp.Web.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Add");
         }
+        [HttpGet]
         public IActionResult Update(int id)
         {
-            return View();
+            var product = _dbContext.Products.Find(id);
+            return View(product);
+        }
+        [HttpPost]
+        public IActionResult Update(Product product)
+        {
+            _dbContext.Products.Update(product);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
