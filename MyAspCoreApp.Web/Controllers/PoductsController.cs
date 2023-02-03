@@ -26,10 +26,10 @@ namespace MyAspCoreApp.Web.Controllers
             //}
         }
 
-        public IActionResult Index()
+        public IActionResult Index([FromServices] IHelper helper)
         {
             var text = "Asp.Net";
-            _helper.Upper(text);
+            var upperText = _helper.Upper(text);
 
             var products = _dbContext.Products.ToList();
             return View(products);
