@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MyAspCoreApp.Web.Helpers;
 using MyAspCoreApp.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
 });
+
+builder.Services.AddSingleton<IHelper, Helper>();
 
 var app = builder.Build();
 
