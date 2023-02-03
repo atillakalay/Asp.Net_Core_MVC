@@ -12,7 +12,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
 });
 
-builder.Services.AddScoped<IHelper, Helper>();
+builder.Services.AddTransient<IHelper, Helper>(sp =>
+{
+    return new Helper(true);
+});
 
 var app = builder.Build();
 
