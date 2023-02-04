@@ -5,18 +5,47 @@
 @model Product
 <h1>Ürün Güncelleme</h1>
 
-<form asp-controller="Products" asp-action="Update" asp-route-productId="@Model.Id" method="post">
-    @*<input type="hidden" asp-for="Id" />*@
-    <label>Ürün Ad:</label>
-    <input type="text" asp-for="Name" />
-    <br />
-    <label>Ürün Fiyat:</label>
-    <input type="text" asp-for="Price" />
-    <br />
-    <label>Ürün Stok:</label>
-    <input type="number" asp-for="Stock" />
-    <br />
-    <label>Ürün Renk:</label>
-    <input type="text" asp-for="Color" />
-    <button type="submit">Ürün Kaydet</button>
+<form asp-controller="Products" asp-action="Update" method="post">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Ürün Ad:</label>
+        <input class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Ürün Fiyat:</label>
+        <input class="form-control" asp-for="Price">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label">Ürün Stok:</label>
+        <input type="number" class="form-control" asp-for="Stock">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Color" class="form-label">Ürün Renk:</label>
+        <select class="form-select" asp-for="Color" asp-items="@ViewBag.ColorSelect">
+            <option value="">Lütfen bir renk seçiniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Ürün Açıklama:</label>
+        <textarea class="form-control" asp-for="Description" placeholder="Ürün Açıklama"></textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="IsPublished" class="form-label">Yayınlansın mı?:</label>
+        <input class="form-check-input" asp-for="IsPublished">
+    </div>
+    <div class="mb-3 mt-3">
+        <span> Ürün satış süresi</span>
+        @foreach (var item in ViewBag.Expire as Dictionary<string, int>)
+        {
+            <div class="form-check">
+                <label class="form-check-label" for="@(item.Value)Expire"> @item.Key</label>
+                <input checked="@(item.Value==ViewBag.ExpireValue ? true : false)" class="form-check-input" type="radio" asp-for="Expire" id="@(item.Value)Expire" value="@item.Value" />
+
+            </div>
+        }
+    </div>
+    <div class="mb-3">
+        <label asp-for="PublishDate" class="form-label">Ürün Yayınlanma Tarihi:</label>
+        <input class="form-control" asp-for="PublishDate">
+    </div>
+    <button class="btn btn-success" type="submit">Ürün Güncelle</button>
 </form>
