@@ -22,6 +22,10 @@
         <input class="form-control" asp-for="Color">
     </div>
     <div class="mb-3">
+        <label asp-for="Description" class="form-label">Ürün Açıklama:</label>
+        <textarea class="form-control" asp-for="Description" placeholder="Ürün Açıklama"></textarea>
+    </div>
+    <div class="mb-3">
         <label asp-for="IsPublished" class="form-label">Yayınlansın mı?:</label>
         <input class="form-check-input" asp-for="IsPublished">
     </div>
@@ -35,6 +39,7 @@
             </div>
         }
     </div>
+
     <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 </form>
 
