@@ -5,17 +5,22 @@
 
 <h1>Ürün Ekleme</h1>
 <form asp-controller="Products" asp-action="Add" method="post">
-    <label>Ürün Ad:</label>
-    <input type="text" asp-for="Name" />
-    <br />
-    <label>Ürün Fiyat:</label>
-    <input type="text" asp-for="Price" />
-    <br />
-    <label>Ürün Stok:</label>
-    <input type="number" asp-for="Stock" />
-    <br />
-    <label>Ürün Renk:</label>
-    <input type="text" asp-for="Color" />
-    <button type="submit">Ürün Kaydet</button>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Ürün Ad:</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Ürün Fiyat:</label>
+        <input type="number" class="form-control" asp-for="Price">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label">Ürün Stok:</label>
+        <input type="number" class="form-control" asp-for="Stock">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Color" class="form-label">Ürün Renk:</label>
+        <input type="text" class="form-control" asp-for="Color">
+    </div>
+    <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 </form>
 
