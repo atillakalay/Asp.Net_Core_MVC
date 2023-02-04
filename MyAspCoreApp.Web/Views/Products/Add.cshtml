@@ -19,7 +19,9 @@
     </div>
     <div class="mb-3">
         <label asp-for="Color" class="form-label">Ürün Renk:</label>
-        <input class="form-control" asp-for="Color">
+        <select class="form-select" asp-for="Color" asp-items="@ViewBag.ColorSelect">
+            <option value="">Lütfen bir renk seçiniz</option>
+        </select>
     </div>
     <div class="mb-3">
         <label asp-for="Description" class="form-label">Ürün Açıklama:</label>

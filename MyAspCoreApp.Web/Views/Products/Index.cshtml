@@ -37,16 +37,7 @@
                 <td>@item.Price</td>
                 <td>@item.Color</td>
                 <td>
-                    @if (item.Description.Length > 20)
-                    {
-                        @item.Description.Substring(0,15)
-
-                        <text>...</text>
-                    }
-                    else
-                    {
-                        @item.Description
-                    }
+                    <text>@item.Description...</text>
                 </td>
                 <td>@item.Stock</td>
                 <td>
