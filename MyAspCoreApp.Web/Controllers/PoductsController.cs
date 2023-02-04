@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MyAspCoreApp.Web.Models;
 
 namespace MyAspCoreApp.Web.Controllers
@@ -41,6 +42,15 @@ namespace MyAspCoreApp.Web.Controllers
         public IActionResult Add()
         {
             ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
+
+            ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+            {
+                new(){Data = "Mavi",Value = "Mavi"},
+                new(){Data = "Kırmızı",Value = "Kırmızı"},
+                new(){Data = "Beyaz",Value = "Beyaz"},
+                new(){Data = "Siyah",Value = "Siyah"}
+            }, "Value", "Data");
+
             return View();
         }
         [HttpPost]
