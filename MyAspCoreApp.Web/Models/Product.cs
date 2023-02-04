@@ -8,5 +8,6 @@
         public int Stock { get; set; }
         public string? Color { get; set; }
         public bool IsPublished { get; set; }
+        public string Expire { get; set; }
     }
 }

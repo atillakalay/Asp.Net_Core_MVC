@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyAspCoreApp.Web.Helpers;
 using MyAspCoreApp.Web.Models;
 
 namespace MyAspCoreApp.Web.Controllers
@@ -8,12 +7,10 @@ namespace MyAspCoreApp.Web.Controllers
     {
         private readonly ProductRepository _productRepository;
         private readonly AppDbContext _dbContext;
-        private readonly IHelper _helper;
 
-        public ProductsController(AppDbContext dbContext, IHelper helper)
+        public ProductsController(AppDbContext dbContext)
         {
             _dbContext = dbContext;
-            _helper = helper;
             _productRepository = new ProductRepository();
 
             //if (!_dbContext.Products.Any())
@@ -26,11 +23,8 @@ namespace MyAspCoreApp.Web.Controllers
             //}
         }
 
-        public IActionResult Index([FromServices] IHelper helper)
+        public IActionResult Index()
         {
-            var text = "Asp.Net";
-            var upperText = _helper.Upper(text);
-
             var products = _dbContext.Products.ToList();
             return View(products);
         }
@@ -46,6 +40,7 @@ namespace MyAspCoreApp.Web.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.Expire = new List<string>() { "1 Ay", "3 ay", "6 ay", "12 ay" };
             return View();
         }
         [HttpPost]
