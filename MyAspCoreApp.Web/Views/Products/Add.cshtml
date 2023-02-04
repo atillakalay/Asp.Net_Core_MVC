@@ -7,11 +7,11 @@
 <form asp-controller="Products" asp-action="Add" method="post">
     <div class="mb-3">
         <label asp-for="Name" class="form-label">Ürün Ad:</label>
-        <input type="text" class="form-control" asp-for="Name">
+        <input class="form-control" asp-for="Name">
     </div>
     <div class="mb-3">
         <label asp-for="Price" class="form-label">Ürün Fiyat:</label>
-        <input type="number" class="form-control" asp-for="Price">
+        <input class="form-control" asp-for="Price">
     </div>
     <div class="mb-3">
         <label asp-for="Stock" class="form-label">Ürün Stok:</label>
@@ -19,7 +19,7 @@
     </div>
     <div class="mb-3">
         <label asp-for="Color" class="form-label">Ürün Renk:</label>
-        <input type="text" class="form-control" asp-for="Color">
+        <input class="form-control" asp-for="Color">
     </div>
     <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 </form>
