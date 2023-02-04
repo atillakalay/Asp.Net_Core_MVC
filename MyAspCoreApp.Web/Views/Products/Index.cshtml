@@ -20,6 +20,8 @@
             <th>Fiyat</th>
             <th>Renk</th>
             <th>Stok</th>
+            <th>Yayınlansın mı?</th>
+            <th>Yayın Süresi</th>
             <th></th>
             <th></th>
         </tr>
@@ -34,6 +36,17 @@
                 <td>@item.Price</td>
                 <td>@item.Color</td>
                 <td>@item.Stock</td>
+                <td>
+                @if (@item.IsPublished)
+                {
+                    <text>Evet</text>
+                }
+                else
+                {
+                    <text>Hayır</text>
+                }
+                </td>
+                <td>@item.Expire</td>
                 <td><a asp-action="Remove" asp-controller="Products" asp-route-id="@item.Id">Sil</a></td>
                 <td><a asp-action="Update" asp-controller="Products" asp-route-id="@item.Id">Güncelle</a></td>
             </tr>

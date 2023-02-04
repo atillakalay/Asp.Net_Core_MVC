@@ -30,8 +30,8 @@
         @foreach (var item in ViewBag.Expire as Dictionary<string, int>)
         {
             <div class="form-check">
-                <input class="form-check-input" type="radio" asp-for="Expire" value="@item.Value"/>
-                <label class="form-check-label"> @item.Key</label>
+                <input class="form-check-input" type="radio" asp-for="Expire" id="@(item.Value)Expire" value="@item.Value"/>
+                <label class="form-check-label" for="@(item.Value)Expire"> @item.Key</label>
             </div>
         }
     </div>
