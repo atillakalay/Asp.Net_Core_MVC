@@ -40,7 +40,7 @@ namespace MyAspCoreApp.Web.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            ViewBag.Expire = new List<string>() { "1 Ay", "3 ay", "6 ay", "12 ay" };
+            ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
             return View();
         }
         [HttpPost]

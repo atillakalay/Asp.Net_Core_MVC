@@ -23,17 +23,18 @@
     </div>
     <div class="mb-3">
         <label asp-for="IsPublished" class="form-label">Yayınlansın mı?:</label>
-        <input  class="form-check-input" asp-for="IsPublished">
+        <input class="form-check-input" asp-for="IsPublished">
     </div>
-    
-    @foreach (var item in ViewBag.Expire as List<string>)
-    {
-        <div class="form-check">
-            <input class="form-check-input" type="radio" asp-for="Expire" value="@item"/>
-            <label class="form-check-label"> @item</label>
-        </div>
-    }
-
+    <div class="mb-3 mt-3">
+        <span> Ürün satış süresi</span>
+        @foreach (var item in ViewBag.Expire as Dictionary<string, int>)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="Expire" value="@item.Value"/>
+                <label class="form-check-label"> @item.Key</label>
+            </div>
+        }
+    </div>
     <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 </form>
 
