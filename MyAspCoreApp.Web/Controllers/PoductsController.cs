@@ -1,17 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MyAspCoreApp.Web.Models;
+using MyAspCoreApp.Web.ViewModels;
 
 namespace MyAspCoreApp.Web.Controllers
 {
     public class ProductsController : Controller
     {
+        private readonly IMapper _mapper;
         private readonly ProductRepository _productRepository;
         private readonly AppDbContext _dbContext;
 
-        public ProductsController(AppDbContext dbContext)
+        public ProductsController(AppDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
             _productRepository = new ProductRepository();
 
             //if (!_dbContext.Products.Any())
@@ -27,7 +31,7 @@ namespace MyAspCoreApp.Web.Controllers
         public IActionResult Index()
         {
             var products = _dbContext.Products.ToList();
-            return View(products);
+            return View(_mapper.Map<List<ProductViewModel>>(products));
         }
 
         public IActionResult Remove(int id)

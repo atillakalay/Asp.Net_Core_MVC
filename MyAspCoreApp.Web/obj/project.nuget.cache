@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MG4/kfqyrIRP2BnK29tOnbYBmb5Cw52D/JMIi/s456aWdBypoebXw7F0hmhdgBvTzAXZlbBBEP/eaUBf9Vd8XQ==",
+  "dgSpecHash": "fiuFUNVZIW51X6IS3e9FRFwrMCOnQFuR9ParOSI71Z0Pd+Dpzko2lsBH3+NgLCIkcfGkQfMJRDAgu1dbYHoWBA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\MyAspCoreApp.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Atilla\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Atilla\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Atilla\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Atilla\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Atilla\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

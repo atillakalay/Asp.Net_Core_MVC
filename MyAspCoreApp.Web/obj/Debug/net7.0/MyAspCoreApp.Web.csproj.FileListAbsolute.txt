@@ -273,3 +273,4 @@ C:\Users\Atilla\source\repos\MyAspCoreApp.Web\MyAspCoreApp.Web\obj\Debug\net7.0\
 C:\Users\Atilla\source\repos\MyAspCoreApp.Web\MyAspCoreApp.Web\obj\Debug\net7.0\MyAspCoreApp.Web.pdb
 C:\Users\Atilla\source\repos\MyAspCoreApp.Web\MyAspCoreApp.Web\obj\Debug\net7.0\MyAspCoreApp.Web.genruntimeconfig.cache
 C:\Users\Atilla\source\repos\MyAspCoreApp.Web\MyAspCoreApp.Web\obj\Debug\net7.0\ref\MyAspCoreApp.Web.dll
+C:\Users\Atilla\source\repos\MyAspCoreApp.Web\MyAspCoreApp.Web\bin\Debug\net7.0\AutoMapper.dll

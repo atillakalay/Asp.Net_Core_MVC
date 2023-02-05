@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MyAspCoreApp.Web.Helpers;
 using MyAspCoreApp.Web.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddTransient<IHelper, Helper>(sp =>
 {
     return new Helper(true);
 });
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
