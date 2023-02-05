@@ -31,7 +31,8 @@ namespace MyAspCoreApp.Web.Controllers
         public IActionResult Index()
         {
             var products = _dbContext.Products.ToList();
-            return View(_mapper.Map<List<ProductViewModel>>(products));
+            var mappedProductList = _mapper.Map<List<ProductViewModel>>(products);
+            return View(mappedProductList);
         }
 
         public IActionResult Remove(int id)

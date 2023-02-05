@@ -12,6 +12,7 @@ namespace MyAspCoreApp.Web.Models
 
         [Required(ErrorMessage = "Fiyat alanı boş olamaz.")]
         [Range(1, 200, ErrorMessage = "Girdiniz değerlerin 1 ila 1000 arasında olması gerekmektedir.")]
+        [RegularExpression(@"^\$(0|[1-9][0-9]{0,2})(,\d{3})*(\.\d{1,2})?$")]
         public decimal? Price { get; set; }
 
         [Required(ErrorMessage = "Stok alanı boş olamaz")]
@@ -29,7 +30,7 @@ namespace MyAspCoreApp.Web.Models
         public DateTime? PublishDate { get; set; }
 
         [Required(ErrorMessage = "Yayın izin alanı boş olamaz.")]
-        public bool? IsPublished { get; set; }
+        public bool IsPublished { get; set; }
 
         [Required(ErrorMessage = "Yayın süresi alanı boş olamaz.")]
         public string? Expire { get; set; }
