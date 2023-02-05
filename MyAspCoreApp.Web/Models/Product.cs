@@ -7,6 +7,7 @@ namespace MyAspCoreApp.Web.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "İsim alanı boş olamaz.")]
+        [StringLength(50, ErrorMessage = "50 Karekterden fazla giriş yapılamaz.")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Fiyat alanı boş olamaz.")]
@@ -18,6 +19,7 @@ namespace MyAspCoreApp.Web.Models
         public int? Stock { get; set; }
 
         [Required(ErrorMessage = "Açıklama alanı boş olamaz.")]
+        [StringLength(100, MinimumLength = 10, ErrorMessage = "Açıklama uzunluğu 10 ila 100 arasında olması gerekmektedir.")]
         public string? Description { get; set; }
 
         [Required(ErrorMessage = "Renk alanı boş olamaz.")]
