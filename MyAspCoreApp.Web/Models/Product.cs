@@ -33,5 +33,10 @@ namespace MyAspCoreApp.Web.Models
 
         [Required(ErrorMessage = "Yayın süresi alanı boş olamaz.")]
         public string? Expire { get; set; }
+
+
+        //[EmailAddress(ErrorMessage = "Email adresi uygun formatta değil.")]
+        //public string EmailAdress { get; set; }
+
     }
 }
