@@ -105,8 +105,9 @@ namespace MyAspCoreApp.Web.Controllers
         public IActionResult Update(int id)
         {
             var product = _dbContext.Products.Find(id);
+            var mappedProduct = _mapper.Map<ProductViewModel>(product);
 
-            ViewBag.ExpireValue = Convert.ToInt32(product.Expire);
+            ViewBag.ExpireValue = Convert.ToInt32(mappedProduct.Expire);
 
             ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
 
@@ -116,21 +117,36 @@ namespace MyAspCoreApp.Web.Controllers
                 new(){Data = "Kırmızı",Value = "Kırmızı"},
                 new(){Data = "Beyaz",Value = "Beyaz"},
                 new(){Data = "Siyah",Value = "Siyah"}
-            }, "Value", "Data", product.Color);
+            }, "Value", "Data", mappedProduct.Color);
 
-            return View(product);
+            return View(mappedProduct);
         }
         [HttpPost]
-        public IActionResult Update(Product product, int productId)
+        public IActionResult Update(ProductViewModel updateProduct)
         {
-            product.Id = productId;
-            _dbContext.Products.Update(product);
+            if (ModelState.IsValid)
+            {
+                ViewBag.ExpireValue = Convert.ToInt32(updateProduct.Expire);
+
+                ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
+
+                ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+                {
+                    new(){Data = "Mavi",Value = "Mavi"},
+                    new(){Data = "Kırmızı",Value = "Kırmızı"},
+                    new(){Data = "Beyaz",Value = "Beyaz"},
+                    new(){Data = "Siyah",Value = "Siyah"}
+                }, "Value", "Data", updateProduct.Color);
+            }
+
+            _dbContext.Products.Update(_mapper.Map<Product>(updateProduct));
             _dbContext.SaveChanges();
 
             TempData["status"] = "Ürün başarıyla güncellendi";
 
             return RedirectToAction("Index");
         }
+
         [AcceptVerbs("GET", "POST")]
         public IActionResult HasProductName(string name)
         {
