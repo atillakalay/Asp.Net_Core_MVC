@@ -67,12 +67,36 @@ namespace MyAspCoreApp.Web.Controllers
             //var stock = int.Parse(HttpContext.Request.Form["Stock"]);
             //var color = HttpContext.Request.Form["Color"];
             //Product product = new Product() { Color = Color, Name = Name, Price = Price, Stock = Stock };
+            ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
+
+            ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+            {
+                new(){Data = "Mavi",Value = "Mavi"},
+                new(){Data = "Kırmızı",Value = "Kırmızı"},
+                new(){Data = "Beyaz",Value = "Beyaz"},
+                new(){Data = "Siyah",Value = "Siyah"}
+            }, "Value", "Data");
+
+
+
             if (ModelState.IsValid)
             {
-                _dbContext.Products.Add(_mapper.Map<Product>(productViewModel));
-                _dbContext.SaveChanges();
-                TempData["status"] = "Ürün başarıyla eklendi";
-                return RedirectToAction("Add");
+                try
+                {
+                    _dbContext.Products.Add(_mapper.Map<Product>(productViewModel));
+                    _dbContext.SaveChanges();
+                    TempData["status"] = "Ürün başarıyla eklendi";
+                    return RedirectToAction("Add");
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError(string.Empty, "Ürün kaydedilirken bir hata meydana geldi. Lütfen daha sonra tekrar deneyiniz.");
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
             }
 
             return RedirectToAction("Add");
