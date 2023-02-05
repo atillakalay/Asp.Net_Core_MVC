@@ -13,10 +13,12 @@
     <div class="mb-3">
         <label asp-for="Price" class="form-label">Ürün Fiyat:</label>
         <input class="form-control" asp-for="Price">
+        <span asp-validation-for="Price" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Stock" class="form-label">Ürün Stok:</label>
         <input type="number" class="form-control" asp-for="Stock">
+        <span asp-validation-for="Stock" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Color" class="form-label">Ürün Renk:</label>
@@ -27,6 +29,7 @@
     <div class="mb-3">
         <label asp-for="Description" class="form-label">Ürün Açıklama:</label>
         <textarea class="form-control" asp-for="Description" placeholder="Ürün Açıklama"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="IsPublished" class="form-label">Yayınlansın mı?:</label>
@@ -37,7 +40,7 @@
         @foreach (var item in ViewBag.Expire as Dictionary<string, int>)
         {
             <div class="form-check">
-                <input class="form-check-input" type="radio" asp-for="Expire" id="@(item.Value)Expire" value="@item.Value"/>
+                <input class="form-check-input" type="radio" asp-for="Expire" id="@(item.Value)Expire" value="@item.Value" />
                 <label class="form-check-label" for="@(item.Value)Expire"> @item.Key</label>
             </div>
         }
