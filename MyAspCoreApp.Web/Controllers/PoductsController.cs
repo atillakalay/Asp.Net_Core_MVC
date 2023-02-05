@@ -58,7 +58,7 @@ namespace MyAspCoreApp.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(Product product)
+        public IActionResult Add(ProductViewModel productViewModel)
         {
             //1. Yöntem
             //var name = HttpContext.Request.Form["name"].ToString();
@@ -66,10 +66,14 @@ namespace MyAspCoreApp.Web.Controllers
             //var stock = int.Parse(HttpContext.Request.Form["Stock"]);
             //var color = HttpContext.Request.Form["Color"];
             //Product product = new Product() { Color = Color, Name = Name, Price = Price, Stock = Stock };
-            _dbContext.Products.Add(product);
-            _dbContext.SaveChanges();
 
-            TempData["status"] = "Ürün başarıyla eklendi";
+            if (ModelState.IsValid)
+            {
+                _dbContext.Products.Add(_mapper.Map<Product>(productViewModel));
+                _dbContext.SaveChanges();
+                TempData["status"] = "Ürün başarıyla eklendi";
+                return RedirectToAction("Add");
+            }
 
             return RedirectToAction("Add");
         }

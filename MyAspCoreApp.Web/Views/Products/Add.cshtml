@@ -1,13 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Add";
 }
-@model Product
+@model ProductViewModel
 
 <h1>Ürün Ekleme</h1>
 <form asp-controller="Products" asp-action="Add" method="post">
     <div class="mb-3">
         <label asp-for="Name" class="form-label">Ürün Ad:</label>
         <input class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Price" class="form-label">Ürün Fiyat:</label>
