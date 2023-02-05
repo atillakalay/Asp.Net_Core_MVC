@@ -67,7 +67,6 @@ namespace MyAspCoreApp.Web.Controllers
             //var stock = int.Parse(HttpContext.Request.Form["Stock"]);
             //var color = HttpContext.Request.Form["Color"];
             //Product product = new Product() { Color = Color, Name = Name, Price = Price, Stock = Stock };
-
             if (ModelState.IsValid)
             {
                 _dbContext.Products.Add(_mapper.Map<Product>(productViewModel));

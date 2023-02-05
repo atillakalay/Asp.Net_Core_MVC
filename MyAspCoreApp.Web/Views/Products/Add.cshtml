@@ -4,6 +4,9 @@
 @model ProductViewModel
 
 <h1>Ürün Ekleme</h1>
+
+<div asp-validation-summary="All"></div>
+
 <form asp-controller="Products" asp-action="Add" method="post">
     <div class="mb-3">
         <label asp-for="Name" class="form-label">Ürün Ad:</label>
