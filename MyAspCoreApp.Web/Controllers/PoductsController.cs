@@ -131,5 +131,19 @@ namespace MyAspCoreApp.Web.Controllers
 
             return RedirectToAction("Index");
         }
+        [AcceptVerbs("GET", "POST")]
+        public IActionResult HasProductName(string name)
+        {
+            var anyProduct = _dbContext.Products.Any(x => x.Name.ToLower() == name.ToLower());
+
+            if (anyProduct)
+            {
+                return Json("Kaydetmeye çalıştığınız ürün ismi veritabanında bulunmaktadır.");
+            }
+            else
+            {
+                return Json(true);
+            }
+        }
     }
 }

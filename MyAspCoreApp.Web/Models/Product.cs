@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyAspCoreApp.Web.Models
 {
@@ -8,6 +9,7 @@ namespace MyAspCoreApp.Web.Models
 
         [Required(ErrorMessage = "İsim alanı boş olamaz.")]
         [StringLength(50, ErrorMessage = "50 Karekterden fazla giriş yapılamaz.")]
+        [Remote(action: "HasProductName", controller: "Product")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Fiyat alanı boş olamaz.")]
