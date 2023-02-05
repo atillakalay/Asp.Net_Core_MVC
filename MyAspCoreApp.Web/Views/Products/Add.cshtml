@@ -5,7 +5,7 @@
 
 <h1>Ürün Ekleme</h1>
 
-<div asp-validation-summary="All"></div>
+
 
 <form asp-controller="Products" asp-action="Add" method="post">
     <div class="mb-3">
@@ -59,3 +59,8 @@
     <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 </form>
 
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
