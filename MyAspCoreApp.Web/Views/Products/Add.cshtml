@@ -25,6 +25,7 @@
         <select class="form-select" asp-for="Color" asp-items="@ViewBag.ColorSelect">
             <option value="">Lütfen bir renk seçiniz</option>
         </select>
+        <span asp-validation-for="Color" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Description" class="form-label">Ürün Açıklama:</label>
@@ -34,6 +35,7 @@
     <div class="mb-3">
         <label asp-for="IsPublished" class="form-label">Yayınlansın mı?:</label>
         <input class="form-check-input" asp-for="IsPublished">
+        <span asp-validation-for="IsPublished" class="text-danger"></span>
     </div>
     <div class="mb-3 mt-3">
         <span> Ürün satış süresi</span>
@@ -44,10 +46,12 @@
                 <label class="form-check-label" for="@(item.Value)Expire"> @item.Key</label>
             </div>
         }
+        <span asp-validation-for="Expire" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="PublishDate" class="form-label">Ürün Yayınlanma Tarihi:</label>
         <input class="form-control" asp-for="PublishDate">
+        <span asp-validation-for="PublishDate" class="text-danger"></span>
     </div>
     <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 </form>

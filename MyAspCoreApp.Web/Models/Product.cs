@@ -13,9 +13,13 @@ namespace MyAspCoreApp.Web.Models
         public int? Stock { get; set; }
         [Required(ErrorMessage = "Açıklama alanı boş olamaz")]
         public string? Description { get; set; }
+        [Required(ErrorMessage = "Renk alanı boş olamaz")]
         public string? Color { get; set; }
+        [Required(ErrorMessage = "Yayın Tarihi alanı boş olamaz")]
         public DateTime? PublishDate { get; set; }
-        public bool IsPublished { get; set; }
-        public string Expire { get; set; }
+        [Required(ErrorMessage = "Yayın izin alanı boş olamaz")]
+        public bool? IsPublished { get; set; }
+        [Required(ErrorMessage = "Yayın süresi alanı boş olamaz")]
+        public string? Expire { get; set; }
     }
 }
