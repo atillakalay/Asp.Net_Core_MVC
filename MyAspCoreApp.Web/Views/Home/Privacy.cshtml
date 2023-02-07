@@ -3,4 +3,8 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="row">
+    <div class="col-md-4">
+        <partial name="~/PartialViews/_ProductListartialView.cshtml" model="@ViewBag.productListPartialViewModel" />
+    </div>
+</div>
