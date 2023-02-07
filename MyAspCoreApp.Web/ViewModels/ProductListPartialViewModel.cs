@@ -1,4 +1,4 @@
-﻿namespace MyAspCoreApp.Web.Models
+﻿namespace MyAspCoreApp.Web.ViewModels
 {
     public class ProductListPartialViewModel
     {
