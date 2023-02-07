@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Atilla\source\repos\MyAspCoreApp.Web\MyAspCoreApp.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Atilla/source/repos/MyAspCoreApp.Web/MyAspCoreApp.Web/PartialViews/_ProductListartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFydGlhbFZpZXdzXF9Qcm9kdWN0TGlzdGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Atilla/source/repos/MyAspCoreApp.Web/MyAspCoreApp.Web/Views/Example/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXBsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
