@@ -69,7 +69,11 @@ else
     </div>
     
     <div class="col-md-4">
-        @await Component.InvokeAsync("ProductList",new {type=1})
+        @* 1.Yol*@
+        @*  @await Component.InvokeAsync("ProductList",new {type=1})*@
+        
+       @* 2. Yol*@
+        <vc:product-list type="1"></vc:product-list>
     </div>
 
 </div>
