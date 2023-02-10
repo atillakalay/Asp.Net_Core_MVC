@@ -8,6 +8,6 @@
         <partial name="~/PartialViews/_ProductListartialView.cshtml" model="@ViewBag.productListPartialViewModel" />
     </div>
     <div class="col-md-4">
-        @await Component.InvokeAsync("ProductList")
+        @await Component.InvokeAsync("ProductList",new {type=2})
     </div>
 </div>
