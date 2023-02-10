@@ -1,6 +1,20 @@
 ﻿@model VisitorViewModel
 
 
+<h2>Ziyaretçi Yorumları</h2>
+@foreach (var item in ViewBag.visitorViewModel as List<VisitorViewModel>)
+{
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@item.Created.ToShortDateString()</h6>
+            <p class="card-text">@item.Comment</p>
+        </div>
+    </div>
+}
+
+<hr/>
+
 @if (TempData["result"] != null)
 {
     <div class="alert alert-info">@TempData["result"]</div>
