@@ -1,1 +1,13 @@
-﻿
+﻿@model VisitorViewModel
+
+<form>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">İsim:</label>
+        <input  class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Comment" class="form-label">Yorum:</label>
+        <textarea class="form-control" asp-for="Comment" placeholder="Yorum"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
