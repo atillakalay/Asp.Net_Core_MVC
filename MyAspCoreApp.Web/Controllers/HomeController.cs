@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using MyAspCoreApp.Web.Models;
 using MyAspCoreApp.Web.ViewModels;
 using System.Diagnostics;
@@ -10,11 +11,13 @@ namespace MyAspCoreApp.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly AppDbContext _appDbContext;
+        private readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger, AppDbContext appDbContext)
+        public HomeController(ILogger<HomeController> logger, AppDbContext appDbContext, IMapper mapper)
         {
             _logger = logger;
             _appDbContext = appDbContext;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
@@ -46,6 +49,27 @@ namespace MyAspCoreApp.Web.Controllers
         public IActionResult Visitor()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult SaveVisitorComment(VisitorViewModel visitorViewModel)
+        {
+            try
+            {
+
+                var visitor = _mapper.Map<Visitor>(visitorViewModel);
+                _appDbContext.Visitors.Add(visitor);
+                _appDbContext.SaveChanges();
+
+                TempData["result"] = "Yorum Kaydedilmiştir.";
+
+                return RedirectToAction("Visitor");
+            }
+            catch (Exception)
+            {
+                TempData["result"] = "Yorum kaydedilirken bir hata meydana geldi.";
+                return RedirectToAction("Visitor");
+            }
+
         }
     }
 }
