@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2aGliFEwtJCkirRjQPDr02do34+jB271r4gI7mTplzA=",
+  "Hash": "MIs1DJcJDqr1kiA39+IUjGwnG4GywDtXTv+IObr/KOA=",
   "Source": "MyAspCoreApp.Web",
   "BasePath": "_content/MyAspCoreApp.Web",
   "Mode": "Default",
@@ -100,6 +100,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\images\\car.jpg",
+      "SourceId": "MyAspCoreApp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\",
+      "BasePath": "_content/MyAspCoreApp.Web",
+      "RelativePath": "images/car.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\car.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\images\\car-100X100.jpg",
+      "SourceId": "MyAspCoreApp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\",
+      "BasePath": "_content/MyAspCoreApp.Web",
+      "RelativePath": "images/car-100X100.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\car-100X100.jpg"
     },
     {
       "Identity": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\js\\site.js",
