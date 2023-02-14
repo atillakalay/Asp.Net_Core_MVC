@@ -5,6 +5,7 @@ using MyAspCoreApp.Web.ViewModels;
 
 namespace MyAspCoreApp.Web.Views.Shared.ViewComponents
 {
+    //[ViewComponent(Name = "p-list")]
     public class ProductListViewComponent : ViewComponent
     {
         private readonly AppDbContext _context;
