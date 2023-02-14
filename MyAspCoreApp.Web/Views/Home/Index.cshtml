@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    var product = new Product() { Id = 1, Name = "Kalem1", Price = 21, Color = "Blue", Description = "Deneme" };
     //var alert = "Bu bir uyarı mesajıdır";
 }
 
@@ -67,13 +69,17 @@ else
     <div class="col-md-4">
         <partial name="~/PartialViews/_ProductListartialView.cshtml" model="@ViewBag.productListPartialViewModel" />
     </div>
-    
+
     <div class="col-md-4">
         @* 1.Yol*@
         @*  @await Component.InvokeAsync("ProductList",new {type=1})*@
-        
+
         @* 2. Yol*@
         <vc:product-list type="1"></vc:product-list>
+    </div>
+    <div class="col-md-4">
+        <italic>Asp .Net Core</italic>
+        <product-show product="@product"></product-show>
     </div>
 
 </div>
