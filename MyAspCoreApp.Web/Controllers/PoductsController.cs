@@ -35,6 +35,14 @@ namespace MyAspCoreApp.Web.Controllers
             return View(mappedProductList);
         }
 
+        public IActionResult Pages(int page, int pageSize)
+        {
+            ViewBag.page = page;
+            ViewBag.pageSize = pageSize;
+
+            return View();
+        }
+
         public IActionResult GetById(int id)
         {
             var product = _dbContext.Products.FirstOrDefault(x => x.Id == id);
