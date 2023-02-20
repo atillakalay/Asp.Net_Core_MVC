@@ -35,6 +35,12 @@ namespace MyAspCoreApp.Web.Controllers
             return View(mappedProductList);
         }
 
+        public IActionResult GetById(int id)
+        {
+            var product = _dbContext.Products.FirstOrDefault(x => x.Id == id);
+            return View(_mapper.Map<ProductViewModel>(product));
+        }
+
         public IActionResult Remove(int id)
         {
             var product = _dbContext.Products.Find(id);
