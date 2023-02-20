@@ -37,13 +37,13 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "article",
-    pattern: "{controller=Blog}/{action=Article}/{name}/{id}");
+//app.MapControllerRoute(
+//    name: "article",
+//    pattern: "{controller=Blog}/{action=Article}/{name}/{id}");
 
-app.MapControllerRoute(
-    name: "productPages",
-    pattern: "{controller=Product}/{action=Pages}/{page}/{pageSize}");
+//app.MapControllerRoute(
+//    name: "productPages",
+//    pattern: "{controller=Product}/{action=Pages}/{page}/{pageSize}");
 
 app.MapControllerRoute(
     name: "default",
