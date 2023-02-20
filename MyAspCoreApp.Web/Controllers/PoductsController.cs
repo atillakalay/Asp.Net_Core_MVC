@@ -6,6 +6,7 @@ using MyAspCoreApp.Web.ViewModels;
 
 namespace MyAspCoreApp.Web.Controllers
 {
+    [Route("[controller]/[action]")]
     public class ProductsController : Controller
     {
         private readonly IMapper _mapper;
@@ -51,6 +52,7 @@ namespace MyAspCoreApp.Web.Controllers
             return View(_mapper.Map<ProductViewModel>(product));
         }
 
+        [HttpGet("{id}")]
         public IActionResult Remove(int id)
         {
             var product = _dbContext.Products.Find(id);

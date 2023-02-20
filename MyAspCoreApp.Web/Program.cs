@@ -45,8 +45,10 @@ app.UseAuthorization();
 //    name: "productPages",
 //    pattern: "{controller=Product}/{action=Pages}/{page}/{pageSize}");
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllers();
 
 app.Run();
