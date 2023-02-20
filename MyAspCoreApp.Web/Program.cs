@@ -38,6 +38,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "pages",
+    pattern: "blog/{article}",
+    defaults: new { controller = "Blog", action = "Article" });
+
+app.MapControllerRoute(
     name: "productPages",
     pattern: "{controller=Product}/{action=Pages}/{page}/{pageSize}");
 
