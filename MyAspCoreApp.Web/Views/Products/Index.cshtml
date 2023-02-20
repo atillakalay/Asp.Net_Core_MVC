@@ -25,6 +25,7 @@
             <th>Yayın Süresi</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -53,6 +54,7 @@
                 <td>@item.Expire</td>
                 <td><a asp-action="Remove" asp-controller="Products" asp-route-id="@item.Id">Sil</a></td>
                 <td><a asp-action="Update" asp-controller="Products" asp-route-id="@item.Id">Güncelle</a></td>
+                <td><a asp-action="GetById" asp-controller="Products" asp-route-id="@item.Id">Detay</a></td>
             </tr>
         }
 
