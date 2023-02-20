@@ -54,14 +54,14 @@
             <td>@item.Expire</td>
             <td><a asp-action="Remove" asp-controller="Products" asp-route-id="@item.Id">Sil</a></td>
             <td><a asp-action="Update" asp-controller="Products" asp-route-id="@item.Id">Güncelle</a></td>
-            <td><a asp-action="GetById" asp-controller="Products" asp-route-id="@item.Id">Detay</a></td>
+            <td><a asp-route="product" asp-route-id="@item.Id">Detay</a></td>
         </tr>
     }
 
 
     </tbody>
 </table>
-<td><a asp-action="Pages" asp-controller="Products" asp-route-page="1" asp-route-pageSize="3">İlk 3 Ürün Ver</a></td>
-<td><a asp-action="Pages" asp-controller="Products" asp-route-page="2" asp-route-pageSize="3">Son 3 Ürün Ver</a></td>
+<td><a asp-route="productPage" asp-route-page="1" asp-route-pageSize="3">İlk 3 Ürün Ver</a></td>
+<td><a asp-route="productPage" asp-route-page="2" asp-route-pageSize="3">Son 3 Ürün Ver</a></td>
 <td><a asp-action="Article" asp-controller="Blog" asp-route-name="makale-ismi" asp-route-id="2">Makaleye Git</a></td>
 

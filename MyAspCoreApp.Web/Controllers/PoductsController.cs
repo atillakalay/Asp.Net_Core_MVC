@@ -34,7 +34,7 @@ namespace MyAspCoreApp.Web.Controllers
             var mappedProductList = _mapper.Map<List<ProductViewModel>>(products);
             return View(mappedProductList);
         }
-        [Route("[controller]/[action]/{page}/{pageSize}")]
+        [Route("[controller]/[action]/{page}/{pageSize}", Name = "productPage")]
         public IActionResult Pages(int page, int pageSize)
         {
             var products = _dbContext.Products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
@@ -44,7 +44,7 @@ namespace MyAspCoreApp.Web.Controllers
 
             return View(_mapper.Map<List<ProductViewModel>>(products));
         }
-        [Route("[controller]/[action]/{id}")]
+        [Route("[controller]/[action]/{id}", Name = "product")]
         public IActionResult GetById(int id)
         {
             var product = _dbContext.Products.FirstOrDefault(x => x.Id == id);
