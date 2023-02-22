@@ -36,7 +36,7 @@ namespace MyAspCoreApp.Web.Controllers
             };
             return View();
         }
-
+        [CustomExceptionFilter]
         public IActionResult Privacy()
         {
             var products = _appDbContext.Products.OrderByDescending(x => x.Id).Select(x => new ProductPartialViewModel() { Id = x.Id, Name = x.Name, Price = x.Price, Stock = x.Stock }).ToList();
