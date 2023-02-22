@@ -23,6 +23,7 @@ namespace MyAspCoreApp.Web.Controllers
             _mapper = mapper;
         }
 
+        [CustomResultFilter(name: "x-version", value: "1.0")]
         [Route("")]
         [Route("Home")]
         [Route("Home/Index")]
