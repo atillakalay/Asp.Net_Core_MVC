@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MyAspCoreApp.Web.Filters;
 using MyAspCoreApp.Web.Helpers;
 using MyAspCoreApp.Web.Models;
 using System.Reflection;
@@ -19,6 +20,8 @@ builder.Services.AddTransient<IHelper, Helper>(sp =>
 });
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+builder.Services.AddScoped<NotFoundFilter>();
 
 var app = builder.Build();
 
