@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using MyAspCoreApp.Web.Filters;
 using MyAspCoreApp.Web.Models;
 using MyAspCoreApp.Web.ViewModels;
 using System.Diagnostics;
@@ -7,6 +8,7 @@ using static MyAspCoreApp.Web.ViewModels.ProductListPartialViewModel;
 
 namespace MyAspCoreApp.Web.Controllers
 {
+    [LogFilter]
     [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
