@@ -21,7 +21,7 @@ namespace MyAspCoreApp.Web.Filters
             var hasProducts = _context.Products.Any(x => x.Id == id);
             if (hasProducts == false)
             {
-                context.Result = new RedirectToActionResult("Error", "Home", null);
+                context.Result = new RedirectToActionResult("Error", "Home", new ErrorViewModel() { Errors = new List<string>() { $"Id({id})' ye sahip ürün bulunamamıştır." } });
             }
         }
     }
