@@ -34,7 +34,6 @@ app.UseStaticFiles();
 //}); 
 #endregion
 
-
 #region Use Ve Run Kullanýmý
 //app.Use(async (context, next) =>
 //{
@@ -59,7 +58,6 @@ app.UseStaticFiles();
 //    await context.Response.WriteAsync("Terminal 3. Middleware\n");
 //});  
 #endregion
-
 
 #region Map ve Run Kullanýmý
 
