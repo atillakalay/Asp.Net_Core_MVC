@@ -36,5 +36,6 @@ namespace MyAspCoreApp.Web.ViewModels
         public string Expire { get; set; }
 
         public IFormFile Image { get; set; }
+        public string ImagePath { get; set; }
     }
 }

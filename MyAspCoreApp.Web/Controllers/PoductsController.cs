@@ -33,7 +33,7 @@ namespace MyAspCoreApp.Web.Controllers
             //}
         }
 
-        [CacheResourceFilter]
+        //[CacheResourceFilter]
         public IActionResult Index()
         {
             var products = _dbContext.Products.ToList();
