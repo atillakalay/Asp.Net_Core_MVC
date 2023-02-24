@@ -4,8 +4,9 @@
 @model ProductUpdateViewModel 
 <h1>Ürün Güncelleme</h1>
 
-<form asp-controller="Products" asp-action="Update" method="post">
+<form asp-controller="Products" asp-action="Update" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ImagePath"/>
 
     <div>
 
