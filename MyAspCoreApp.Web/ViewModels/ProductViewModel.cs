@@ -34,5 +34,7 @@ namespace MyAspCoreApp.Web.ViewModels
         public bool IsPublished { get; set; }
         [Required(ErrorMessage = "Yayın süresi alanı boş olamaz.")]
         public string Expire { get; set; }
+
+        public IFormFile Image { get; set; }
     }
 }

@@ -56,6 +56,10 @@
         <input class="form-control" asp-for="PublishDate">
         <span asp-validation-for="PublishDate" class="text-danger"></span>
     </div>
+    <div class="mb-3">
+        <label for="formFileSm" class="form-label">Ürün Resim</label>
+        <input class="form-control form-control-sm" type="file" asp-for="Image">
+    </div>
     <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 </form>
 
