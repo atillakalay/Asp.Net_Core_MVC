@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.FileProviders;
 using MyAspCoreApp.Web.Filters;
 using MyAspCoreApp.Web.Models;
 using MyAspCoreApp.Web.ViewModels;
@@ -13,11 +14,13 @@ namespace MyAspCoreApp.Web.Controllers
         private readonly IMapper _mapper;
         private readonly ProductRepository _productRepository;
         private readonly AppDbContext _dbContext;
+        private readonly IFileProvider _fileProvider;
 
-        public ProductsController(AppDbContext dbContext, IMapper mapper)
+        public ProductsController(AppDbContext dbContext, IMapper mapper, IFileProvider fileProvider)
         {
             _dbContext = dbContext;
             _mapper = mapper;
+            _fileProvider = fileProvider;
             _productRepository = new ProductRepository();
 
             //if (!_dbContext.Products.Any())
