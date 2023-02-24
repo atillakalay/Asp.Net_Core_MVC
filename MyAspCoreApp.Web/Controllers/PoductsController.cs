@@ -113,8 +113,10 @@ namespace MyAspCoreApp.Web.Controllers
                     using var stream = new FileStream(path, FileMode.Create);
                     productViewModel.Image.CopyTo(stream);
 
+                    var product = _mapper.Map<Product>(productViewModel);
+                    product.ImagePath = productViewModel.Image.FileName;
 
-                    _dbContext.Products.Add(_mapper.Map<Product>(productViewModel));
+                    _dbContext.Products.Add(product);
                     _dbContext.SaveChanges();
                     TempData["status"] = "Ürün başarıyla eklendi";
                     return RedirectToAction("Add");
