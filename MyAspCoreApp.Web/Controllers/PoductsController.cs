@@ -92,7 +92,8 @@ namespace MyAspCoreApp.Web.Controllers
             //var stock = int.Parse(HttpContext.Request.Form["Stock"]);
             //var color = HttpContext.Request.Form["Color"];
             //Product product = new Product() { Color = Color, Name = Name, Price = Price, Stock = Stock };
-            ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
+
+            IActionResult result = ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
 
             ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
             {
@@ -102,12 +103,17 @@ namespace MyAspCoreApp.Web.Controllers
                 new(){Data = "Siyah",Value = "Siyah"}
             }, "Value", "Data");
 
-
-
             if (ModelState.IsValid)
             {
                 try
                 {
+                    var root = _fileProvider.GetDirectoryContents("wwwroot");
+                    var images = root.First(x => x.Name == "images");
+                    var path = Path.Combine(images.PhysicalPath, productViewModel.Image.FileName);
+                    using var stream = new FileStream(path, FileMode.Create);
+                    productViewModel.Image.CopyTo(stream);
+
+
                     _dbContext.Products.Add(_mapper.Map<Product>(productViewModel));
                     _dbContext.SaveChanges();
                     TempData["status"] = "Ürün başarıyla eklendi";
@@ -116,12 +122,13 @@ namespace MyAspCoreApp.Web.Controllers
                 catch (Exception)
                 {
                     ModelState.AddModelError(string.Empty, "Ürün kaydedilirken bir hata meydana geldi. Lütfen daha sonra tekrar deneyiniz.");
-                    return View();
+
+                    result = View();
                 }
             }
             else
             {
-                return View();
+                result = View();
             }
 
             return RedirectToAction("Add");
