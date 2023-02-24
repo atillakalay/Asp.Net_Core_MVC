@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\car.jpg"
     },
     {
+      "Id": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\images\\noimage.jpg",
+      "PackagePath": "staticwebassets\\images\\noimage.jpg"
+    },
+    {
       "Id": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

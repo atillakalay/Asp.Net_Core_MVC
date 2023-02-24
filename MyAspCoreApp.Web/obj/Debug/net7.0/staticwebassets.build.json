@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MIs1DJcJDqr1kiA39+IUjGwnG4GywDtXTv+IObr/KOA=",
+  "Hash": "D5rI+VOV8t4k3JAK+YsdJwrsgnBqKpbOOGeXYJofcH8=",
   "Source": "MyAspCoreApp.Web",
   "BasePath": "_content/MyAspCoreApp.Web",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\car-100X100.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\images\\noimage.jpg",
+      "SourceId": "MyAspCoreApp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\",
+      "BasePath": "_content/MyAspCoreApp.Web",
+      "RelativePath": "images/noimage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\noimage.jpg"
     },
     {
       "Identity": "C:\\Users\\Atilla\\source\\repos\\MyAspCoreApp.Web\\MyAspCoreApp.Web\\wwwroot\\js\\site.js",

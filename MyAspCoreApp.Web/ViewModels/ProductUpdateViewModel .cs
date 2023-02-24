@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyAspCoreApp.Web.ViewModels
 {
-    public class ProductViewModel
+    public class ProductUpdateViewModel
     {
         public int Id { get; set; }
 
