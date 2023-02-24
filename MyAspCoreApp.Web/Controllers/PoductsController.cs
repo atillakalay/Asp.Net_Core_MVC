@@ -124,9 +124,6 @@ namespace MyAspCoreApp.Web.Controllers
                     }
 
 
-
-
-
                     _dbContext.Products.Add(product);
                     _dbContext.SaveChanges();
                     TempData["status"] = "Ürün başarıyla eklendi";
