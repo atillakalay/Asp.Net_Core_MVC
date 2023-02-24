@@ -109,12 +109,16 @@ namespace MyAspCoreApp.Web.Controllers
                 {
                     var root = _fileProvider.GetDirectoryContents("wwwroot");
                     var images = root.First(x => x.Name == "images");
-                    var path = Path.Combine(images.PhysicalPath, productViewModel.Image.FileName);
+
+                    var randomImageName = Guid.NewGuid() + Path.GetExtension(productViewModel.Image.FileName);
+
+
+                    var path = Path.Combine(images.PhysicalPath, randomImageName);
                     using var stream = new FileStream(path, FileMode.Create);
                     productViewModel.Image.CopyTo(stream);
 
                     var product = _mapper.Map<Product>(productViewModel);
-                    product.ImagePath = productViewModel.Image.FileName;
+                    product.ImagePath = randomImageName;
 
                     _dbContext.Products.Add(product);
                     _dbContext.SaveChanges();

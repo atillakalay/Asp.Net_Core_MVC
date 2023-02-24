@@ -34,12 +34,16 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="align-middle">
                 <td>@item.Id</td>
                 <td>
                     @if (!String.IsNullOrEmpty(item.ImagePath))
                     {
                         <img style="width: 100px;height: 100px" src="/images/@(item.ImagePath)" />
+                    }
+                    else
+                    {
+                        <img style="width: 100px;height: 100px" src="/images/noimage.jpg)" />
                     }
                 </td>
                 <td>@item.Name</td>

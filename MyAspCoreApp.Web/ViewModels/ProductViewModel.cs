@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyAspCoreApp.Web.ViewModels
@@ -36,6 +37,8 @@ namespace MyAspCoreApp.Web.ViewModels
         public string Expire { get; set; }
 
         public IFormFile Image { get; set; }
+
+        [ValidateNever]
         public string ImagePath { get; set; }
     }
 }
