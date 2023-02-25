@@ -6,6 +6,40 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
+
+            function loadComments() {
+
+                $.ajax({
+
+                    type: "GET",
+                    url: "/visitorAjax/VisitorCommentList",
+                    data: jsonData,
+                    success: function () {
+
+                        $.each(data, function (index, item) {
+
+                            let item = `    <div class="card mt-3">
+                                                                <div class="card-body">
+                                                                <h5 class="card-title">${item.name}</h5>
+                                                                 <h6 class="card-subtitle mb-2 text-muted">${item.created}</h6>
+                                                                 <p class="card-text">${item.comment}</p>
+                                                                 </div>
+                                                                </div>`;
+                            $(#comments).append(item)
+
+                        })
+
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+
+                })
+
+            }
+
+            loadComments();
+
             $("#btnSave").click(function () {
 
                 var name = $("#Name").val();
@@ -34,6 +68,9 @@
 
     </script>
 }
+
+<div id="comments">
+</div>
 
 <div class="mb-3">
     <label for="Name" class="form-label">İsim:</label>
