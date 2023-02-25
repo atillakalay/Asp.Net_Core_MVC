@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using MyAspCoreApp.Web.Filters;
 using MyAspCoreApp.Web.Models;
@@ -36,9 +37,21 @@ namespace MyAspCoreApp.Web.Controllers
         //[CacheResourceFilter]
         public IActionResult Index()
         {
-            var products = _dbContext.Products.ToList();
-            var mappedProductList = _mapper.Map<List<ProductViewModel>>(products);
-            return View(mappedProductList);
+            List<ProductViewModel> products = _dbContext.Products.Include(x => x.Category).Select(x => new ProductViewModel()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description,
+                Price = x.Price,
+                Stock = x.Stock,
+                CategoryName = x.Category.Name,
+                Color = x.Color,
+                Expire = x.Expire,
+                ImagePath = x.ImagePath,
+                IsPublished = x.IsPublished,
+                PublishDate = x.PublishDate
+            }).ToList();
+            return View(products);
         }
         [Route("[controller]/[action]/{page}/{pageSize}", Name = "productPage")]
         public IActionResult Pages(int page, int pageSize)

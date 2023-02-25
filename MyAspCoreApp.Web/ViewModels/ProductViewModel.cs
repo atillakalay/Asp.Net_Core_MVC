@@ -39,9 +39,11 @@ namespace MyAspCoreApp.Web.ViewModels
         public IFormFile? Image { get; set; }
 
         [ValidateNever]
-        public string ImagePath { get; set; }
+        public string? ImagePath { get; set; }
 
         [Required(ErrorMessage = "Kategori alanı boş olamaz.")]
         public int CategoryId { get; set; }
+
+        public string CategoryName { get; set; }
     }
 }
