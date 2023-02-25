@@ -13,19 +13,18 @@
 
                     type: "GET",
                     url: "/visitorAjax/VisitorCommentList",
-                    data: jsonData,
                     success: function () {
 
                         $.each(data, function (index, item) {
 
-                            let item = `    <div class="card mt-3">
+                            let comment = `    <div class="card mt-3">
                                                                 <div class="card-body">
                                                                 <h5 class="card-title">${item.name}</h5>
                                                                  <h6 class="card-subtitle mb-2 text-muted">${item.created}</h6>
                                                                  <p class="card-text">${item.comment}</p>
                                                                  </div>
                                                                 </div>`;
-                            $(#comments).append(item)
+                            $(#comments).append(comment)
 
                         })
 
@@ -54,7 +53,8 @@
                     url: "/visitorAjax/SaveVisitorComment",
                     data: jsonData,
                     success: function () {
-                        console.log(data);
+                       alert("Yorum Kaydedildi")
+                        loadComments();
                     },
                     error: function (error) {
                         console.log(error);
