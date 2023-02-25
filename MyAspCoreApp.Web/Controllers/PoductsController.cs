@@ -81,6 +81,9 @@ namespace MyAspCoreApp.Web.Controllers
                 new(){Data = "Siyah",Value = "Siyah"}
             }, "Value", "Data");
 
+            var categories = _dbContext.Category.ToList();
+            ViewBag.categorySelect = new SelectList(categories, "Id", "Name");
+
             return View();
         }
         [HttpPost]
