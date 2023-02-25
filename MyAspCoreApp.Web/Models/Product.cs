@@ -17,6 +17,8 @@
         public string Expire { get; set; }
 
         public string? ImagePath { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
 
         //[EmailAddress(ErrorMessage = "Email adresi uygun formatta değil.")]
         //public string EmailAdress { get; set; }
