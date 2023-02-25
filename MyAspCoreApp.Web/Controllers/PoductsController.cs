@@ -111,6 +111,9 @@ namespace MyAspCoreApp.Web.Controllers
 
             IActionResult result = ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
 
+            var categories = _dbContext.Category.ToList();
+            ViewBag.categorySelect = new SelectList(categories, "Id", "Name");
+
             ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
             {
                 new(){Data = "Mavi",Value = "Mavi"},
@@ -167,6 +170,9 @@ namespace MyAspCoreApp.Web.Controllers
             var product = _dbContext.Products.Find(id);
             var mappedProduct = _mapper.Map<ProductViewModel>(product);
 
+            var categories = _dbContext.Category.ToList();
+            ViewBag.categorySelect = new SelectList(categories, "Id", "Name", product.CategoryId);
+
             ViewBag.ExpireValue = Convert.ToInt32(mappedProduct.Expire);
 
             ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
@@ -186,6 +192,9 @@ namespace MyAspCoreApp.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                var categories = _dbContext.Category.ToList();
+                ViewBag.categorySelect = new SelectList(categories, "Id", "Name", updateProduct.CategoryId);
+
                 ViewBag.ExpireValue = Convert.ToInt32(updateProduct.Expire);
 
                 ViewBag.Expire = new Dictionary<string, int>() { { "1 Ay", 1 }, { "3 Ay", 3 }, { "6 Ay", 6 }, { "12 Ay", 12 } };
@@ -213,7 +222,8 @@ namespace MyAspCoreApp.Web.Controllers
                 }
             }
 
-            _dbContext.Products.Update(_mapper.Map<Product>(updateProduct));
+            var product = _mapper.Map<Product>(updateProduct);
+            _dbContext.Products.Update(product);
             _dbContext.SaveChanges();
 
             TempData["status"] = "Ürün başarıyla güncellendi";

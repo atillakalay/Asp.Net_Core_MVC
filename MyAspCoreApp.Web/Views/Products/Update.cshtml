@@ -1,12 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Update";
 }
-@model ProductUpdateViewModel 
+@model ProductUpdateViewModel
 <h1>Ürün Güncelleme</h1>
 
 <form asp-controller="Products" asp-action="Update" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
-    <input type="hidden" asp-for="ImagePath"/>
+    <input type="hidden" asp-for="ImagePath" />
 
     <div>
 
@@ -73,6 +73,13 @@
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Ürün Resim</label>
         <input class="form-control form-control-sm" type="file" asp-for="Image">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Color" class="form-label">Kategoriler:</label>
+        <select class="form-select" asp-for="CategoryId" asp-items="@ViewBag.categorySelect">
+            <option value="">Lütfen bir kategori seçiniz</option>
+        </select>
+        <span asp-validation-for="Color" class="text-danger"></span>
     </div>
     <button class="btn btn-success" type="submit">Ürün Güncelle</button>
 </form>

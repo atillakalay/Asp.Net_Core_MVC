@@ -7,6 +7,7 @@ namespace MyAspCoreApp.Web.ViewModels
     public class ProductUpdateViewModel
     {
         public int Id { get; set; }
+        public int CategoryId { get; set; }
 
         [Required(ErrorMessage = "İsim alanı boş olamaz.")]
         [StringLength(50, ErrorMessage = "50 Karekterden fazla giriş yapılamaz.")]
