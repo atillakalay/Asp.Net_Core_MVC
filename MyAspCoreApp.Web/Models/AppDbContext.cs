@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyAspCoreApp.Web.Models;
 
 namespace MyAspCoreApp.Web.Models
 {

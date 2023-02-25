@@ -9,25 +9,28 @@
 
             function loadComments() {
 
+                $("#loading").show()
+
                 $.ajax({
 
                     type: "GET",
                     url: "/visitorAjax/VisitorCommentList",
                     success: function () {
-
+                        $("#comments").html("");
                         $.each(data, function (index, item) {
 
                             let comment = `    <div class="card mt-3">
-                                                                <div class="card-body">
-                                                                <h5 class="card-title">${item.name}</h5>
-                                                                 <h6 class="card-subtitle mb-2 text-muted">${item.created}</h6>
-                                                                 <p class="card-text">${item.comment}</p>
-                                                                 </div>
-                                                                </div>`;
-                            $(#comments).append(comment)
+                                                                        <div class="card-body">
+                                                                        <h5 class="card-title">${item.name}</h5>
+                                                                         <h6 class="card-subtitle mb-2 text-muted">${item.date}</h6>
+                                                                         <p class="card-text">${item.comment}</p>
+                                                                         </div>
+                                                                        </div>`;
+                            $("#comments").append(comment);
+                       
 
                         })
-
+                        $("#loading").hide()
                     },
                     error: function (error) {
                         console.log(error);
@@ -53,7 +56,7 @@
                     url: "/visitorAjax/SaveVisitorComment",
                     data: jsonData,
                     success: function () {
-                       alert("Yorum Kaydedildi")
+                        alert("Yorum Kaydedildi")
                         loadComments();
                     },
                     error: function (error) {
@@ -69,9 +72,6 @@
     </script>
 }
 
-<div id="comments">
-</div>
-
 <div class="mb-3">
     <label for="Name" class="form-label">İsim:</label>
     <input class="form-control" id="Name">
@@ -81,3 +81,16 @@
     <textarea class="form-control" id="Comment" name="Comment" placeholder="Yorum"></textarea>
 </div>
 <button id="btnSave" type="button" class="btn btn-primary">Kaydet</button>
+
+<div id="loading">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+
+<div id="comments">
+
+   
+</div>

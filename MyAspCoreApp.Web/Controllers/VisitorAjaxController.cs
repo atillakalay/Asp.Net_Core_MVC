@@ -37,7 +37,7 @@ namespace MyAspCoreApp.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> VisitorCommentList()
         {
-            var visitors = await _appDbContext.Visitors.ToListAsync();
+            var visitors = await _appDbContext.Visitors.OrderByDescending(x => x.Created).ToListAsync();
             var visitorViewModels = _mapper.Map<List<VisitorViewModel>>(visitors);
             return Json(visitorViewModels);
         }
